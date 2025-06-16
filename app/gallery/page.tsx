@@ -191,7 +191,7 @@ export default function GalleryPage() {
                       alt={image.alt}
                       width={600}
                       height={400}
-                      className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 object-top"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
                       <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/30 backdrop-blur-sm rounded-full p-3 transform group-hover:scale-110">

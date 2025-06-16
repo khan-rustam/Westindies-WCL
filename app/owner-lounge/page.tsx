@@ -60,11 +60,11 @@ export default function OwnerLoungePage() {
               <div className="relative">
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover-glow">
                   <Image
-                    src="/Players Images/Ajay Sethi.png"
+                    src="/Owner/Ajay-Sethi.jpeg"
                     alt="Ajay Sethi"
                     width={350}
                     height={400}
-                    className="w-full h-80 object-cover rounded-xl"
+                    className="w-72 h-80 object-cover rounded-xl mx-auto"
                   />
                 </div>
               </div>

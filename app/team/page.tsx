@@ -246,13 +246,12 @@ export default function TeamPage() {
                 style={{ transitionDelay: `${index * 100}ms` }}
                 onClick={() => openPlayerModal(player)}
               >
-                <div className="relative">
+                <div className="relative w-full h-72">
                   <Image
                     src={player.image}
                     alt={`${player.name} - ${player.role}`}
-                    width={300}
-                    height={300}
-                    className="w-full h-auto object-cover rounded-t-2xl"
+                    fill
+                    className="object-cover object-top rounded-t-2xl"
                   />
                 </div>
 
@@ -284,7 +283,7 @@ export default function TeamPage() {
                 alt={`${selectedPlayer.name} - ${selectedPlayer.role}`}
                 width={400}
                 height={400}
-                className="rounded-xl shadow-lg"
+                className="rounded-xl shadow-lg object-contain"
               />
             </div>
 

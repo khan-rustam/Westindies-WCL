@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X, Trophy } from "lucide-react"
+import { Menu, X } from "lucide-react"
+import Image from "next/image"
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -29,13 +30,19 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 py-2 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2 group">
-            <Trophy className={`h-8 w-8 ${isScrolled ? "text-maroon" : "text-white"} group-hover:text-gold transition-colors duration-300`} />
+            <Image
+              src="/LOGO.png"
+              alt="West Indies Champions Logo"
+              width={120}
+              height={120}
+              className={`object-contain ${isScrolled ? "filter-maroon" : "filter-white"} group-hover:filter-gold transition-all duration-300`}
+            />
             <span className={`font-bold text-xl group-hover:text-gold transition-colors duration-300 ${isScrolled ? "text-maroon" : "text-white"}`}>
               WI Champions
             </span>

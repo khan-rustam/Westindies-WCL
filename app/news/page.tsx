@@ -9,84 +9,133 @@ import HeroSection from "@/components/ui/hero-section"
 const newsArticles = [
   {
     id: 1,
-    title: "Chris Gayle Confirmed as Captain for WCL 2025",
-    subtitle: "Universe Boss ready to lead West Indies Champions to glory in England",
-    image: "/placeholder.svg?height=250&width=400",
-    date: "March 15, 2025",
+    title: "EaseMyTrip World Championship of Legends Takes the Next Step of Returning Kieron Pollard and Dwayne Bravo to West Indies Cricket",
+    subtitle: "Former International Players Kieron Pollard and Dwayne Bravo to Be Part of West Indies Champions in The Rise of T20 Cricket Through EaseMyTrip WCL",
+    image: "https://cf-img-a-in.tosshub.com/lingo/stak/images/story/202504/67ee7aa8478dd-easemytrip-world-championship-of-legends-takes-the-next-step-of-returning-kieron-pollard-and-dwayne-031010630-16x9.jpg?size=1600:900",
+    link: "https://thesportstak.com/cricket/story/easemytrip-world-championship-of-legends-takes-the-next-step-of-returning-kieron-pollard-and-dwayne-bravo-to-west-indies-cricket-3168983-2025-04-04",
+    date: "June 21, 2025",
     readTime: "3 min read",
     category: "Team News",
   },
   {
     id: 2,
-    title: "WCL 2025 Fixtures Announced: Five Epic Battles Await",
-    subtitle: "West Indies Champions to face cricket's biggest legends across iconic English venues",
-    image: "/placeholder.svg?height=250&width=400",
-    date: "March 12, 2025",
-    readTime: "5 min read",
-    category: "Tournament",
+    title: "Dwayne Bravo, Kieron Pollard join West Indies Champions in upcoming WCL",
+    subtitle: "The World Championship of Legends Season 2 is on a marquee journey featuring former prominent international players in the era of Legends Cricket. Adding to the lineup, including cricketing greats who will take the field again, Dwayne Bravo and Kieron Pollard will now rejoin professional T20 Cricket through West Indies Champions.",
+    image: "https://d3lzcn6mbbadaf.cloudfront.net/media/details/ANI-20250404083442.jpg",
+    link: "https://www.aninews.in/news/sports/cricket/dwayne-bravo-kieron-pollard-join-west-indies-champions-in-upcoming-wcl20250404140534/",
+    date: "June 21, 2025",
+    readTime: "3 min read",
+    category: "Player News",
   },
   {
     id: 3,
-    title: "Dwayne Bravo Joins Champions Squad",
-    subtitle: "DJ Bravo brings his all-round expertise and championship experience to the team",
-    image: "/placeholder.svg?height=250&width=400",
-    date: "March 10, 2025",
-    readTime: "4 min read",
+    title: "World Championship Of Legends 2: Kieron Pollard, Dwayne Bravo To Play For West Indies Champions",
+    subtitle: "The Season 2 (WCL) is on a marquee journey, featuring former international greats in the era of Legends Cricket. Adding to this star-studded lineup, Dwayne Bravo and Kieron Pollard are set to make a grand return to professional T20 cricket through West Indies Champions.",
+    image: "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1Ch8bC.img?w=640&h=400&m=6&x=66&y=187&s=108&d=108",
+    link: "https://www.msn.com/en-in/sports/cricket/dwayne-bravo-kieron-pollard-return-to-professional-cricket-with-world-championship-of-legends/ar-AA1ChlcR?ocid=BingNewsSerp",
+    date: "June 21, 2025",
+    readTime: "3 min read",
     category: "Player News",
   },
   {
     id: 4,
-    title: "Training Camp Begins: Champions Gear Up for England",
-    subtitle: "Intensive preparation underway as legends fine-tune their skills for WCL 2025",
-    image: "/placeholder.svg?height=250&width=400",
-    date: "March 8, 2025",
-    readTime: "6 min read",
-    category: "Training",
+    title: "Kieron Pollard and Dwayne Bravo joined West Indies Champions in the WCL",
+    subtitle: "The World Championship of Legends Season 2 is on the marquee journey of featuring former prominent international players in the era of Legends Cricket. Adding to the lineup including cricketing greats to take the field again, Dwayne Bravo and Kieron pollard now will rejoin professional T20 Cricket through West Indies Champions.",
+    image: "https://gulftimesint.com/wp-content/uploads/2025/04/wcl.jpg",
+    link: "https://gulftimesint.com/kieron-pollard-and-dwayne-bravo-joined-west-indies-champions-in-the-wcl/",
+    date: "June 21, 2025",
+    readTime: "3 min read",
+    category: "Player News",
   },
   {
     id: 5,
-    title: "Ajay Sethi's Vision: Bringing Caribbean Cricket to the World",
-    subtitle: "Owner discusses his passion for cricket and plans for the West Indies Champions",
-    image: "/placeholder.svg?height=250&width=400",
-    date: "March 5, 2025",
-    readTime: "8 min read",
-    category: "Interview",
+    title: "Dwayne Bravo And Kieron Pollard To Play For West Indies Champions In World Championship Of Legends Season 2",
+    subtitle: "During his international career from 2004 to 2021, Dwayne Bravo, a legend of T20 cricket who is currently in his late forties, was a superb all-rounder with remarkable death bowling abilities.",
+    image: "https://images.news18.com/ibnlive/uploads/2025/04/Kieron-Pollard-and-DJ-Bravo-to-play-for-West-Indies-Champions-2025-04-dfeb807e8f768bc4487d6f434722463a-16x9.jpg?impolicy=website&width=640&height=360",
+    link: "https://www.news18.com/cricket/dwayne-bravo-and-kieron-pollard-to-play-for-west-indies-champions-in-world-championship-of-legends-season-2-9287079.html",
+    date: "June 21, 2025",
+    readTime: "3 min read",
+    category: "Player News",
   },
   {
     id: 6,
-    title: "Kieron Pollard: Ready for One More Championship",
-    subtitle: "The explosive all-rounder shares his excitement about returning to competitive cricket",
-    image: "/placeholder.svg?height=250&width=400",
-    date: "March 3, 2025",
-    readTime: "5 min read",
-    category: "Player Feature",
+    title: "Chris Gayle to lead West Indies Champions in World Championship of Legends 2024",
+    subtitle: "Chris Gayle recently made his appearance in New York during the T20 World Cup 2024 match between India and Pakistan. The former cricketer was seen wearing a white blazer having India's tri-colours and Pakistan's green colour on each sleeve. Later, Gayle also asked the legends from both teams to sign an autograph on his blazer",
+    image: "https://images.mid-day.com/images/images/2024/jun/gayle-red_d_d.webp",
+    link: "https://www.mid-day.com/sports/cricket/article/chris-gayle-to-lead-west-indies-champions-in-world-championship-of-legends-2024-23353715",
+    date: "June 21, 2025",
+    readTime: "3 min read",
+    category: "Team News",
   },
   {
     id: 7,
-    title: "Fan Zone Experience: What to Expect at WCL 2025",
-    subtitle: "Exclusive behind-the-scenes access and interactive experiences planned for supporters",
-    image: "/placeholder.svg?height=250&width=400",
-    date: "March 1, 2025",
-    readTime: "4 min read",
-    category: "Fan Experience",
+    title: "Gayle, Sammy to play for West Indies Champions in World Championship of Legends",
+    subtitle: "Ajay Sethi, Chairman of Dubai-based Channel 2 Group Corporation has officially assumed ownership of the West Indies Champions",
+    image: "https://imgengine.khaleejtimes.com/khaleejtimes/import/images/dV9svLkokY0zVz6hCjxyCRYE0MU.png?width=1200&format=auto",
+    link: "https://www.khaleejtimes.com/sports/cricket/gayle-sammy-to-play-for-west-indies-champions-in-world-championship-of-legends",
+    date: "June 21, 2025",
+    readTime: "3 min read",
+    category: "Team News",
   },
   {
     id: 8,
-    title: "Caribbean Cricket Culture: The Champions' Secret Weapon",
-    subtitle: "How West Indies' unique approach to cricket gives them an edge in tournaments",
-    image: "/placeholder.svg?height=250&width=400",
-    date: "February 28, 2025",
-    readTime: "7 min read",
-    category: "Culture",
+    title: "Chris Gayle to lead West Indies Champions in World Championship of Legends 2024",
+    subtitle: "The West Indies Squad Comprises Impressive Lineup of Dwayne Smith, Samuel Badree And Daren Sammy",
+    image: "https://img.republicworld.com/rimages/754829cc-b749-41d5-8e84-7dee15e75e12-171636827813416_9.webp?w=1280&h=720&q=75&format=webp",
+    link: "https://www.republicworld.com/sports/cricket/chris-gayle-to-lead-west-indies-champions-in-world-championship-of-legends-2024/",
+    date: "June 21, 2025",
+    readTime: "3 min read",
+    category: "Team News",
   },
   {
     id: 9,
-    title: "Sunil Narine's Mystery Spin: Still Bamboozling Batsmen",
-    subtitle: "The enigmatic spinner discusses his preparation and role in the Champions squad",
-    image: "/placeholder.svg?height=250&width=400",
-    date: "February 25, 2025",
-    readTime: "6 min read",
-    category: "Player Feature",
+    title: "Ajay Sethi Takes Charge Of West Indies Champions, Gayle To Lead The Team In World Championship Of Legends",
+    subtitle: "The World Championship of Legends has officially announced the inclusion of a powerful roster from the West Indies, with the legendary Chris Gayle leading the team in the upcoming cricket league.",
+    image: "https://images.onearabia.me/webp/img/2024/06/gayle-leads-west-indies-in-cricket-legends-1718192692244-600x338.jpg",
+    link: "https://www.onearabia.me/cricket/ajay-sethi-takes-ownership-of-west-indies-champions-011-043101.html",
+    date: "June 21, 2025",
+    readTime: "3 min read",
+    category: "Team News",
+  },
+  {
+    id: 10,
+    title: "World Championship of Legends to Bring Back the 'Classic Bowl Out' Format In its Inaugural Season",
+    subtitle: "The World Championship of Legends (WCL) is set to elevate its status in the cricketing world introducing a nostalgic twist.",
+    image: "https://img.republicworld.com/all_images/team3-1719256521631-16_9.webp?w=1280&h=720&q=75&format=webp",
+    link: "https://www.msn.com/en-in/sports/cricket/world-championship-of-legends-to-bring-back-the-classic-bowl-out-format-in-its-inaugural-season/ar-BB1oOhbE",
+    date: "June 21, 2025",
+    readTime: "3 min read",
+    category: "Tournament",
+  },
+  {
+    id: 11,
+    title: "World Championship of Legends to bring back 'Classic Bowl-Out' format in its inaugural season",
+    subtitle: "The World Championship of Legends (WCL) is set to elevate its status in the cricketing world by introducing a nostalgic twist.",
+    image: "https://d3lzcn6mbbadaf.cloudfront.net/media/details/ANI-20240625114839.jpg",
+    link: "https://aninews.in/news/sports/cricket/world-championship-of-legends-to-bring-back-classic-bowl-out-format-in-its-inaugural-season20240625171910/",
+    date: "June 21, 2025",
+    readTime: "3 min read",
+    category: "Tournament",
+  },
+  {
+    id: 12,
+    title: "World Championship of Legends to bring back 'Classic Bowl-Out' format in its inaugural season",
+    subtitle: "The decision to adopt the 'bowl-out' method for resolving tied matches harks back to the early days of T20 cricket, providing a nostalgic and thrilling element for both players and spectators.",
+    image: "https://www.hindustantimes.com/ht-img/img/2024/04/16/550x309/Cricket_1713260878026_1713260990583.jpg",
+    link: "https://www.hindustantimes.com/cricket/world-championship-of-legends-to-bring-back-classic-bowl-out-format-in-its-inaugural-season-101719316650893.html",
+    date: "June 21, 2025",
+    readTime: "3 min read",
+    category: "Tournament",
+  },
+  {
+    id: 13,
+    title: "Sports News | World Championship of Legends to Bring Back 'Classic Bowl-Out' Format in Its Inaugural Season",
+    subtitle: "The decision to adopt the 'bowl-out' method for resolving tied matches harks back to the early days of T20 cricket, providing a nostalgic and thrilling element for both players and spectators.",
+    image: "https://st1.latestly.com/wp-content/uploads/2024/06/ANI-20240625114839-380x214.jpg",
+    link: "https://www.latestly.com/agency-news/sports-news-world-championship-of-legends-to-bring-back-classic-bowl-out-format-in-its-inaugural-season-6063939.html",
+    date: "June 21, 2025",
+    readTime: "3 min read",
+    category: "Tournament",
   },
 ]
 
@@ -134,11 +183,10 @@ export default function NewsPage() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
-                  selectedCategory === category
-                    ? "bg-maroon text-white shadow-lg"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                }`}
+                className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${selectedCategory === category
+                  ? "bg-maroon text-white shadow-lg"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }`}
               >
                 {category}
               </button>
@@ -179,54 +227,47 @@ export default function NewsPage() {
               };
 
               return (
-                <article
+                <Link
                   key={article.id}
-                  className={`bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition-all duration-500 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                  }`}
+                  href={article.link || `/news/${article.id}`}
+                  target={article.link ? "_blank" : undefined}
+                  rel={article.link ? "noopener noreferrer" : undefined}
+                  className={`block bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-                  />
-                  <div className="relative">
-                    <Image
-                      src={article.image || "/placeholder.svg"}
-                      alt={article.title}
-                      width={400}
-                      height={250}
-                      className="w-full h-48 object-cover"
+                  <article>
+                    <script
+                      type="application/ld+json"
+                      dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
                     />
-                    <div className="absolute top-4 left-4 bg-maroon text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      {article.category}
-                    </div>
-                  </div>
-
-                  <div className="p-6">
-                    <h2 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">{article.title}</h2>
-                    <p className="text-gray-600 mb-4 line-clamp-2">{article.subtitle}</p>
-
-                    <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                      <div className="flex items-center">
-                        <Calendar className="h-4 w-4 mr-1" />
-                        {article.date}
-                      </div>
-                      <div className="flex items-center">
-                        <Clock className="h-4 w-4 mr-1" />
-                        {article.readTime}
+                    <div className="relative">
+                      <Image
+                        src={article.image || "/placeholder.svg"}
+                        alt={article.title}
+                        width={400}
+                        height={250}
+                        className="w-full h-48 object-cover"
+                      />
+                      <div className="absolute top-4 left-4 bg-maroon text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        {article.category}
                       </div>
                     </div>
-
-                    <Link
-                      href={`/news/${article.id}`}
-                      className="inline-flex items-center text-maroon hover:text-gold font-semibold transition-colors duration-300 group"
-                    >
-                      Read More
-                      <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
-                    </Link>
-                  </div>
-                </article>
+                    <div className="p-6">
+                      <h2 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">{article.title}</h2>
+                      <p className="text-gray-600 mb-4 line-clamp-2">{article.subtitle}</p>
+                      <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                        <div className="flex items-center">
+                          <Calendar className="h-4 w-4 mr-1" />
+                          {article.date}
+                        </div>
+                      </div>
+                      <span className="inline-flex items-center text-maroon hover:text-gold font-semibold transition-colors duration-300 group cursor-pointer">
+                        Read More
+                        <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
+                      </span>
+                    </div>
+                  </article>
+                </Link>
               )
             })}
           </div>

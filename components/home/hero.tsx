@@ -67,7 +67,7 @@ export default function Hero() {
           {/* Hero Banner - Recommended size: 1600x500px */}
           <div className="w-screen relative pt-12 left-1/2 right-1/2 -mx-[50vw] mb-16" style={{ maxWidth: '100vw' }}>
             <Image
-              src="/Banner-2.jpg"
+              src="/Banner.jpg"
               alt="West Indies Team Banner"
               width={1600}
               height={400}

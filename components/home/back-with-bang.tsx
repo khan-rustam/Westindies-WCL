@@ -1,40 +1,30 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { motion, useInView } from "framer-motion"
+import { useRef } from "react"
 
 export default function BackWithBang() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.3 },
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={sectionRef} className="section-padding bg-white">
+    <section ref={ref} className="section-padding bg-white">
       <div className="max-w-6xl mx-auto">
-        <h2
-          className={`text-4xl sm:text-5xl font-bold text-center mb-12 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        <motion.h2
+          initial={{ opacity: 0, y: 80, scale: 0.95, rotateX: 25 }}
+          animate={isInView ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : {}}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="text-4xl sm:text-5xl font-bold text-center mb-12"
         >
           <span className="text-gradient">West Indies Champions</span>
           <span className="block text-maroon mt-2">Back with a Bang!</span>
-        </h2>
+        </motion.h2>
 
-        <div
-          className={`bg-gradient-to-br from-maroon/10 via-gold/5 to-maroon/10 rounded-3xl p-8 sm:p-12 hover-glow transition-all duration-1000 ease-out delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        <motion.div
+          initial={{ opacity: 0, y: 80, scale: 0.95, rotateX: 25 }}
+          animate={isInView ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : {}}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          className="bg-gradient-to-br from-maroon/10 via-gold/5 to-maroon/10 rounded-3xl p-8 sm:p-12 hover-glow"
         >
           <div className="prose prose-lg max-w-none text-gray-700">
             <p className="text-xl leading-relaxed mb-6">
@@ -57,12 +47,15 @@ export default function BackWithBang() {
             </p>
           </div>
 
-          <div
-            className={`mt-8 text-center transition-all duration-1000 ease-out delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          <motion.div
+            initial={{ opacity: 0, y: 80, scale: 0.95, rotateX: 25 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : {}}
+            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+            className="mt-8 text-center"
           >
             <button className="btn-primary text-lg px-8 py-4">Experience the Magic</button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )

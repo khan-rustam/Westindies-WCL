@@ -32,12 +32,30 @@ const milestones = [
   },
 ]
 
+const galleryImages = [
+  "1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg", "8.jpeg", "9.jpeg", "10.jpeg", "11.jpeg", "12.jpeg", "13.jpeg", "14.jpeg"
+]
+
 export default function OwnerLoungePage() {
   const [isVisible, setIsVisible] = useState(false)
+  const [openImage, setOpenImage] = useState<string | null>(null)
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
+
+  // Keyboard navigation for modal
+  useEffect(() => {
+    if (openIndex === null) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenImage(null), setOpenIndex(null);
+      if (e.key === "ArrowLeft" && openIndex > 0) setOpenImage(galleryImages[openIndex - 1]), setOpenIndex(openIndex - 1);
+      if (e.key === "ArrowRight" && openIndex < galleryImages.length - 1) setOpenImage(galleryImages[openIndex + 1]), setOpenIndex(openIndex + 1);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [openIndex]);
 
   return (
     <div className="min-h-screen">
@@ -98,6 +116,80 @@ export default function OwnerLoungePage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Owner in Action Gallery */}
+      <section className="section-padding bg-gray-100">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-8">
+            <span className="text-gradient">Owner in Action</span>
+          </h2>
+          <p className="text-lg text-gray-700 mb-12">
+            A glimpse into the vibrant life of our owner, involved in various activities and moments with the team and beyond.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {galleryImages.map((img, idx) => (
+              <div
+                key={img}
+                className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden cursor-pointer"
+                onClick={() => { setOpenImage(img); setOpenIndex(idx); }}
+              >
+                <Image
+                  src={`/Owner/owners-gallery/${img}`}
+                  alt={`Owner Gallery ${idx + 1}`}
+                  width={400}
+                  height={400}
+                  className="object-cover w-full h-64"
+                  placeholder="blur"
+                  blurDataURL="/Owner/Ajay-Sethi.jpeg"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Modal for open image */}
+        {openImage && openIndex !== null && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80" onClick={() => { setOpenImage(null); setOpenIndex(null); }}>
+            <div className="relative max-w-3xl w-full p-4 flex flex-col items-center" onClick={e => e.stopPropagation()}>
+              {/* Close Button */}
+              <button
+                className="absolute top-4 right-4 text-white bg-maroon rounded-full  px-2 shadow-lg hover:bg-gold hover:text-maroon transition focus:outline-none focus:ring-4 focus:ring-gold"
+                onClick={() => { setOpenImage(null); setOpenIndex(null); }}
+                aria-label="Close"
+                tabIndex={0}
+              >
+                ×
+              </button>
+              {/* Prev Button */}
+              <button
+                className={`absolute left-2 top-1/2 -translate-y-1/2 text-maroon rounded-full p-2 text-2xl font-bold shadow-lg  hover:text-maroon transition ${openIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                onClick={() => openIndex > 0 && (setOpenImage(galleryImages[openIndex - 1]), setOpenIndex(openIndex - 1))}
+                disabled={openIndex === 0}
+                aria-label="Previous image"
+                tabIndex={0}
+              >
+                ‹
+              </button>
+              {/* Next Button */}
+              <button
+                className={`absolute right-2 top-1/2 -translate-y-1/2  text-maroon rounded-full p-2 text-2xl font-bold shadow-lg  hover:text-maroon transition ${openIndex === galleryImages.length - 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                onClick={() => openIndex < galleryImages.length - 1 && (setOpenImage(galleryImages[openIndex + 1]), setOpenIndex(openIndex + 1))}
+                disabled={openIndex === galleryImages.length - 1}
+                aria-label="Next image"
+                tabIndex={0}
+              >
+                ›
+              </button>
+              <Image
+                src={`/Owner/owners-gallery/${openImage}`}
+                alt="Owner Gallery Large"
+                width={900}
+                height={900}
+                className="object-contain w-full h-[70vh] rounded-xl"
+              />
+            </div>
+          </div>
+        )}
       </section>
 
       {/* Milestones Timeline */}
@@ -280,7 +372,7 @@ export default function OwnerLoungePage() {
               Follow Ajay Sethi and the West Indies Champions as they embark on their quest for WCL 2025 glory!
             </p>
             <button className="bg-white text-maroon px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
-              <a href="https://www.instagram.com/wclwestindieschampions" className="block w-full h-full">Connect with Our Owner</a>
+              <a href="https://www.instagram.com/wclwestindieschampions" target="_blank" rel="noopener noreferrer" className="block w-full h-full">Connect with Our Owner</a>
             </button>
           </div>
         </div>

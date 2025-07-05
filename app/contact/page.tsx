@@ -135,7 +135,7 @@ export default function ContactPage() {
                         <h3 className="font-semibold text-gray-900 mb-1">Media & Press</h3>
                         <p className="text-gray-600">For media inquiries and press releases</p>
                         <a
-                          href="mailto:media@wclcricket.com"
+                          href="mailto:media@wclcricket.com" target="_blank"
                           className="text-maroon hover:text-gold font-medium transition-colors duration-300"
                         >
                           media@wclcricket.com
@@ -151,7 +151,7 @@ export default function ContactPage() {
                         <h3 className="font-semibold text-gray-900 mb-1">Sponsorship & Brand Tie-Ups</h3>
                         <p className="text-gray-600">Partnership and sponsorship opportunities</p>
                         <a
-                          href="mailto:partners@wclcricket.com"
+                          href="mailto:partners@wclcricket.com" target="_blank"
                           className="text-maroon hover:text-gold font-medium transition-colors duration-300"
                         >
                           partners@wclcricket.com
@@ -187,7 +187,7 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-2 gap-4">
                     <a
-                      href="https://www.facebook.com/share/1CSvupSds9/"
+                      href="https://www.facebook.com/share/1CSvupSds9/" target="_blank" rel="noopener noreferrer"
                       className="flex items-center space-x-3 bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-all duration-300 transform hover:scale-105"
                     >
                       <Facebook className="h-6 w-6" />
@@ -195,7 +195,7 @@ export default function ContactPage() {
                     </a>
 
                     <a
-                      href="https://www.instagram.com/wclwestindieschampions"
+                      href="https://www.instagram.com/wclwestindieschampions" target="_blank" rel="noopener noreferrer"
                       className="flex items-center space-x-3 bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-all duration-300 transform hover:scale-105"
                     >
                       <Instagram className="h-6 w-6" />
@@ -203,7 +203,7 @@ export default function ContactPage() {
                     </a>
 
                     <a
-                      href="https://x.com/westindieschamp"
+                      href="https://x.com/westindieschamp" target="_blank" rel="noopener noreferrer"
                       className="flex items-center space-x-3 bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-all duration-300 transform hover:scale-105"
                     >
                       <Twitter className="h-6 w-6" />
@@ -211,7 +211,7 @@ export default function ContactPage() {
                     </a>
 
                     <a
-                      href="#"
+                      href="#" target="_blank" rel="noopener noreferrer" 
                       className="flex items-center space-x-3 bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-all duration-300 transform hover:scale-105"
                     >
                       <Youtube className="h-6 w-6" />

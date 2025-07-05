@@ -226,6 +226,32 @@ export default function TeamPage() {
     setSelectedPlayer(null)
   }
 
+  // Categorize players as per the provided list
+  const batsmen = players.filter(
+    (p) =>
+      p.name === "Chris Gayle" ||
+      p.name === "Shivnarine Chanderpaul" ||
+      p.name === "Lendl Simmons"
+  )
+  const wkBatsmen = players.filter((p) => p.name === "Chadwick Walton")
+  const allRounders = players.filter(
+    (p) =>
+      p.name === "Kieron Pollard" ||
+      p.name === "Dwayne Bravo" ||
+      p.name === "Dwayne Smith" ||
+      p.name === "Perkins Williams" ||
+      p.name === "Ashley Nurse" ||
+      p.name === "Dave Mohammed"
+  )
+  const bowlers = players.filter(
+    (p) =>
+      p.name === "Sheldon Cottrell" ||
+      p.name === "Shannon Gabriel" ||
+      p.name === "Nikita Miller" ||
+      p.name === "Suleiman Benn" ||
+      p.name === "Fidel Edwards"
+  )
+
   return (
     <div className="min-h-screen">
       <HeroSection
@@ -236,31 +262,131 @@ export default function TeamPage() {
 
       {/* Players Grid */}
       <section className="section-padding bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {players.map((player, index) => (
-              <div
-                key={player.name}
-                className={`bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition-all duration-500 transform hover:scale-103 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                  }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
-                onClick={() => openPlayerModal(player)}
-              >
-                <div className="relative w-full h-72">
-                  <Image
-                    src={player.image}
-                    alt={`${player.name} - ${player.role}`}
-                    fill
-                    className="object-cover object-top rounded-t-2xl"
-                  />
-                </div>
+        <div className="max-w-7xl mx-auto space-y-16">
+          {/* Batsman Section */}
+          <div>
+            <h2 className="text-3xl font-bold text-maroon mb-2 text-center">Batsman</h2>
+            <div className="flex justify-center mb-6">
 
-                <div className="p-4 text-center">
-                  <h3 className="text-xl font-bold text-maroon">{player.name}</h3>
-                  <p className="text-gray-600 text-sm">{player.role}</p>
+              <div className="mx-auto w-32 border-b-2 border-maroon rounded-full"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {batsmen.map((player, index) => (
+                <div
+                  key={player.name}
+                  className={`bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition-all duration-500 transform hover:scale-103 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                  onClick={() => openPlayerModal(player)}
+                >
+                  <div className="relative w-full h-72">
+                    <Image
+                      src={player.image}
+                      alt={`${player.name} - ${player.role}`}
+                      fill
+                      className="object-cover object-top rounded-t-2xl"
+                    />
+                  </div>
+                  <div className="p-4 text-center">
+                    <h3 className="text-xl font-bold text-maroon">{player.name}
+                      {player.name === "Shivnarine Chanderpaul" && (
+                        <span className="block text-xs text-gold font-semibold">(player cum head coach)</span>
+                      )}
+                    </h3>
+                    <p className="text-gray-600 text-sm">{player.role}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+          {/* WK-Batsman Section */}
+          <div>
+            <h2 className="text-3xl font-bold text-maroon mb-2 text-center">WK-Batsman</h2>
+            <div className="flex justify-center mb-6">
+              <div className="mx-auto w-32 border-b-2 border-maroon rounded-full"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {wkBatsmen.map((player, index) => (
+                <div
+                  key={player.name}
+                  className={`bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition-all duration-500 transform hover:scale-103 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                  onClick={() => openPlayerModal(player)}
+                >
+                  <div className="relative w-full h-72">
+                    <Image
+                      src={player.image}
+                      alt={`${player.name} - ${player.role}`}
+                      fill
+                      className="object-cover object-top rounded-t-2xl"
+                    />
+                  </div>
+                  <div className="p-4 text-center">
+                    <h3 className="text-xl font-bold text-maroon">{player.name}</h3>
+                    <p className="text-gray-600 text-sm">{player.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* All-rounder Section */}
+          <div>
+            <h2 className="text-3xl font-bold text-maroon mb-2 text-center">All-rounder</h2>
+            <div className="flex justify-center mb-6">
+              <div className="mx-auto w-32 border-b-2 border-maroon rounded-full"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {allRounders.map((player, index) => (
+                <div
+                  key={player.name}
+                  className={`bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition-all duration-500 transform hover:scale-103 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                  onClick={() => openPlayerModal(player)}
+                >
+                  <div className="relative w-full h-72">
+                    <Image
+                      src={player.image}
+                      alt={`${player.name} - ${player.role}`}
+                      fill
+                      className="object-cover object-top rounded-t-2xl"
+                    />
+                  </div>
+                  <div className="p-4 text-center">
+                    <h3 className="text-xl font-bold text-maroon">{player.name}</h3>
+                    <p className="text-gray-600 text-sm">{player.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Bowler Section */}
+          <div>
+            <h2 className="text-3xl font-bold text-maroon mb-2 text-center">Bowler</h2>
+            <div className="flex justify-center mb-6">
+              <div className="mx-auto w-32 border-b-2 border-maroon rounded-full"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {bowlers.map((player, index) => (
+                <div
+                  key={player.name}
+                  className={`bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition-all duration-500 transform hover:scale-103 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                  onClick={() => openPlayerModal(player)}
+                >
+                  <div className="relative w-full h-72">
+                    <Image
+                      src={player.image}
+                      alt={`${player.name} - ${player.role}`}
+                      fill
+                      className="object-cover object-top rounded-t-2xl"
+                    />
+                  </div>
+                  <div className="p-4 text-center">
+                    <h3 className="text-xl font-bold text-maroon">{player.name}</h3>
+                    <p className="text-gray-600 text-sm">{player.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

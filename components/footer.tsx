@@ -17,16 +17,16 @@ export default function Footer() {
               return and the Caribbean spirit takes over England!
             </p>
             <div className="flex space-x-4">
-              <a href="https://www.facebook.com/share/1CSvupSds9/" className="text-gray-400 hover:text-gold transition-colors duration-300">
+              <a href="https://www.facebook.com/share/1CSvupSds9/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold transition-colors duration-300">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="https://www.instagram.com/wclwestindieschampions" className="text-gray-400 hover:text-gold transition-colors duration-300">
+              <a href="https://www.instagram.com/wclwestindieschampions" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold transition-colors duration-300">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="https://x.com/westindieschamp" className="text-gray-400 hover:text-gold transition-colors duration-300">
+              <a href="https://x.com/westindieschamp" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold transition-colors duration-300">
                 <Twitter className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-gold transition-colors duration-300">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold transition-colors duration-300">
                 <Youtube className="h-6 w-6" />
               </a>
             </div>

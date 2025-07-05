@@ -335,10 +335,10 @@ export default function GalleryPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-gold hover:bg-gold/90 text-maroon px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105">
-              <a href="https://www.instagram.com/wclwestindieschampions" className="block w-full h-full">Follow on Instagram</a>
+              <a href="https://www.instagram.com/wclwestindieschampions" target="_blank" rel="noopener noreferrer" className="block w-full h-full">Follow on Instagram</a>
             </button>
             <button className="border-2 border-white text-white hover:bg-white hover:text-maroon px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105">
-              <a href="https://x.com/westindieschamp" className="block w-full h-full">Follow on X</a>
+              <a href="https://x.com/westindieschamp" target="_blank" rel="noopener noreferrer" className="block w-full h-full">Follow on X</a>
             </button>
           </div>
         </div>

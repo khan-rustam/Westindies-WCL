@@ -222,7 +222,7 @@ export default function AboutPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-maroon hover:bg-maroon/90 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105">
-              <a href="https://x.com/westindieschamp" className="block w-full h-full">Follow Our Journey</a>
+              <a href="https://x.com/westindieschamp" target="_blank" rel="noopener noreferrer" className="block w-full h-full">Follow Our Journey</a>
             </button>
             <button className="border-2 border-maroon text-maroon hover:bg-maroon hover:text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105">
               Get Match Updates

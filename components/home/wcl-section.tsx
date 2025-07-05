@@ -1,40 +1,30 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { motion, useInView } from "framer-motion"
+import { useRef } from "react"
 
 export default function WCLSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.3 },
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={sectionRef} className="section-padding bg-white">
+    <section ref={ref} className="section-padding bg-white">
       <div className="max-w-6xl mx-auto">
-        <h2
-          className={`text-4xl sm:text-5xl font-bold text-center mb-8 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        <motion.h2
+          initial={{ opacity: 0, y: 80, scale: 0.95, rotateX: 25 }}
+          animate={isInView ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : {}}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="text-4xl sm:text-5xl font-bold text-center mb-8"
         >
           <span className="text-gradient">The World Championship of Legends</span>
           <span className="block text-maroon mt-2">Season 2</span>
-        </h2>
+        </motion.h2>
 
-        <div
-          className={`bg-gradient-to-r from-maroon/5 to-gold/5 rounded-2xl p-8 sm:p-12 hover-glow transition-all duration-1000 ease-out delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        <motion.div
+          initial={{ opacity: 0, y: 80, scale: 0.95, rotateX: 25 }}
+          animate={isInView ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : {}}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          className="bg-gradient-to-r from-maroon/5 to-gold/5 rounded-2xl p-8 sm:p-12 hover-glow"
         >
           <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-center max-w-4xl mx-auto">
             The World Championship of Legends makes its triumphant return in 2025! From July 18 to August 2, cricket's
@@ -56,7 +46,7 @@ export default function WCLSection() {
               <div className="text-gold font-semibold">Grand Finale</div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

@@ -1,7 +1,8 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useRef } from "react"
 import { Calendar, Clock, MapPin } from "lucide-react"
+import { motion, useInView, useMotionValue, useTransform } from "framer-motion"
 
 const fixtures = [
   {
@@ -47,31 +48,30 @@ const fixtures = [
 ]
 
 export default function Season2Section() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const mx = useMotionValue(0)
+  const my = useMotionValue(0)
+  const rotateX = useTransform(my, [-1, 1], [10, -10])
+  const rotateY = useTransform(mx, [-1, 1], [-10, 10])
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.3 },
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
+  function handleMouseMove(e: React.MouseEvent<HTMLElement, MouseEvent>) {
+    if (!ref.current) return;
+    const { left, top, width, height } = ref.current.getBoundingClientRect();
+    const x = ((e.clientX - (left + width / 2)) / (width / 2));
+    const y = ((e.clientY - (top + height / 2)) / (height / 2));
+    mx.set(x);
+    my.set(y);
+  }
 
   return (
-    <section ref={sectionRef} className="section-padding bg-gray-50">
+    <section ref={ref} className="section-padding bg-gray-50" onMouseMove={handleMouseMove}>
       <div className="max-w-7xl mx-auto">
-        <div
-          className={`text-center mb-12 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        <motion.div
+          initial={{ opacity: 0, y: -60 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="text-center mb-12"
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             🔥 <span className="text-gradient">Season 2 – WCL 2025</span>
@@ -80,10 +80,13 @@ export default function Season2Section() {
             <strong>Chris Gayle</strong> leads our legendary squad into battle! The Universe Boss returns to show the
             world why West Indies cricket is pure entertainment.
           </p>
-        </div>
+        </motion.div>
 
-        <div
-          className={`bg-white rounded-2xl shadow-xl overflow-hidden hover-glow transition-all duration-1000 ease-out delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        <motion.div
+          initial={{ opacity: 0, y: 80, scale: 0.95, rotateX: 25 }}
+          animate={isInView ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : {}}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          className="bg-white rounded-2xl shadow-xl overflow-hidden hover-glow"
         >
           <div className="bg-gradient-to-r from-maroon to-gold p-6">
             <h3 className="text-2xl font-bold text-white text-center">Match Fixtures</h3>
@@ -135,7 +138,7 @@ export default function Season2Section() {
               </tbody>
             </table>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
